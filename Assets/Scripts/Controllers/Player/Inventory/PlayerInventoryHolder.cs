@@ -38,4 +38,20 @@ public class PlayerInventoryHolder : InventoryHolder
 
         return false;
     }
+
+    public void RemoveResources(List<recipeItem> recipe){
+        foreach (recipeItem item in recipe)
+            {
+                Debug.Log("Removing from primary inventory");
+                Debug.Log("required amount: " + item.RequiredAmount);
+                int numToAdd = primaryInventorySystem.RemoveResources(item, item.RequiredAmount);
+                
+
+                if(numToAdd > 0)
+                {
+                    Debug.Log("remaining: " + numToAdd);
+                    secondaryInventorySystem.RemoveResources(item, numToAdd);    
+                } 
+            }
+    }
 }

@@ -36,7 +36,7 @@ public class MouseItemData : MonoBehaviour
 
             if(Mouse.current.leftButton.wasPressedThisFrame && !IsPointerOverUIObject())
             {
-                buildingManager.placeBuilding(this);
+                if(buildingManager.placeBuilding(this))
                 ClearSlot();
             }
 

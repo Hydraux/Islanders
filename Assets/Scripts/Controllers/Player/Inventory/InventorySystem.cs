@@ -69,4 +69,33 @@ public class InventorySystem
         slots = InventorySlots.Where(item => item.ItemData == itemToAdd).ToList();
         return slots.Count > 0 ? true : false;
     }
+
+    public int RemoveResources(recipeItem item, int numToAdd)
+    {
+        
+        foreach (InventorySlot slot in InventorySlots)
+        {
+            if(slot.ItemData == item.item && numToAdd > 0)
+            {
+                if(slot.StackSize <= numToAdd)
+                {   
+                    numToAdd -= slot.StackSize;
+                    slot.ClearSlot();
+                    Debug.Log("Cleared slot");
+                }
+                else
+                {
+                    Debug.Log("Removed item from stack");
+                    slot.RemoveFromStack(numToAdd);
+                    numToAdd = 0;
+                }
+                    OnInventorySlotChanged?.Invoke(slot);
+
+            }
+        }
+        return numToAdd;
+    }
+
+    
+
 }

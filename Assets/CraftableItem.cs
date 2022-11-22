@@ -30,8 +30,10 @@ public class CraftableItem : MonoBehaviour
         // Check if player has required resources
         if(HasResources())
         {
+            Debug.Log("Has resources");
             //Remove required resources
-            inventory.PrimaryInventorySystem.InventorySlots;
+            inventory.RemoveResources(recipe);
+            
             //Add item to inventory
             inventory.AddToInventory(itemData, 1);
         }
