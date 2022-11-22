@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c15ffc4861c2d634895dc1c8c7fc2bd0, type: 3}
+  m_Name: Shoes
+  m_EditorClassIdentifier: 
+  bodyPartName: Shoes 0
+  AnimationID: 0
+  Animations:
+  - {fileID: 7400000, guid: 0afef89dc3530254eb293b1d4e2bd366, type: 2}
+  - {fileID: 7400000, guid: 0bfeb09abe42a7e4eaafad3f27620bf3, type: 2}
+  - {fileID: 7400000, guid: 14687e55763020d4ba983d8984a87d4d, type: 2}
+  - {fileID: 7400000, guid: e4f9cee5b749a6c4a97fda3796b4e885, type: 2}
+  - {fileID: 7400000, guid: 9cbe589cb1b773f4593ee4cd0bfb897b, type: 2}
+  - {fileID: 7400000, guid: 2faaf309f40b4804e9b2b49776371823, type: 2}
+  - {fileID: 7400000, guid: 25f88b847346e174ea7c86278cf6ebbe, type: 2}
+  - {fileID: 7400000, guid: 5295d2c1d629e0647827888131a1162d, type: 2}
