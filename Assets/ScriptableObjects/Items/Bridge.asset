@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Bridge
   m_EditorClassIdentifier: 
   ID: 1
-  DisplayName: 
+  DisplayName: Bridge
   Description: 
-  Icon: {fileID: 1354782696, guid: 336a960f5b3dba940bf99e7aee60e646, type: 3}
+  Icon: {fileID: 192772507, guid: 4be68b929ea389e49aa1dce8a02f414b, type: 3}
   MaxStackSize: 1

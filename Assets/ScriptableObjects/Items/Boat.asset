@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Boat
   m_EditorClassIdentifier: 
   ID: 0
-  DisplayName: 
+  DisplayName: Boat
   Description: 
-  Icon: {fileID: 0}
-  MaxStackSize: 0
+  Icon: {fileID: 1140262509, guid: 13296b2a82f19ec40950ae214df86cfb, type: 3}
+  MaxStackSize: 1
