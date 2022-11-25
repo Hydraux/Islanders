@@ -23,7 +23,7 @@ public class ItemPickup : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D other)
     {
         Debug.Log("collided with " + ItemData.DisplayName);
-        var inventory = other.transform.GetComponent<PlayerInventoryHolder>();
+        var inventory = other.transform.parent.GetComponent<PlayerInventoryHolder>();
 
         if(!inventory) return;
 

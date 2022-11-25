@@ -5,6 +5,13 @@ TagManager:
   serializedVersion: 2
   tags:
   - Tree
+  - Walls
+  - backpack
+  - Boat
+  - Island
+  - Inventory Holder
+  - Island Scene
+  - Sail Scene
   layers:
   - Default
   - TransparentFX

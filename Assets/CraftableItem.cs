@@ -22,7 +22,7 @@ public class CraftableItem : MonoBehaviour
     {
         button = GetComponent<Button>();
         button.onClick.AddListener(Craft);
-        inventory = GameObject.Find("Player").GetComponent<PlayerInventoryHolder>();
+        inventory = GameObject.Find("InventoryHolder").GetComponent<PlayerInventoryHolder>();
     }
 
     void Craft()

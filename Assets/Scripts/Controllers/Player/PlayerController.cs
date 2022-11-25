@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
@@ -12,6 +13,8 @@ public class PlayerController : MonoBehaviour
     Rigidbody2D rb;
     BoxCollider2D boxCollider2D;
     Interactor interactor;
+    GameObject islandScene;
+    GameObject sailingScene;
 
     // Start is called before the first frame update
     void Start()
@@ -19,6 +22,9 @@ public class PlayerController : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();    
         boxCollider2D = GetComponent<BoxCollider2D>();
         interactor = GetComponent<Interactor>();
+        islandScene = GameObject.FindGameObjectWithTag("Island Scene");
+        sailingScene = GameObject.FindGameObjectWithTag("Sail Scene");
+
 
     }
 
@@ -52,8 +58,26 @@ public class PlayerController : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D other)
     {
-        Debug.Log("collision");
+        Debug.Log("Collided with tag: " + other.gameObject.tag);
+        Debug.Log("Collided with name: " + other.gameObject.name);
+        if(other.gameObject.tag == "Island")
+        {
+            if(other.gameObject.name == "Island (1)")
+            {
+                foreach (Transform child in islandScene.transform)
+                {
+                    child.gameObject.SetActive(true);
+                } 
+                foreach (Transform child in sailingScene.transform)
+                {
+                    child.gameObject.SetActive(false);
+                }   
+
+
+            }
+        }
     }
+
 
     
 

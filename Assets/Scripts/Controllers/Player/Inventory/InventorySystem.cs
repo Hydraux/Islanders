@@ -15,6 +15,7 @@ public class InventorySystem
 
     public UnityAction<InventorySlot> OnInventorySlotChanged;
 
+
     public InventorySystem(int size)
     {
         inventorySlots = new List<InventorySlot>(size);

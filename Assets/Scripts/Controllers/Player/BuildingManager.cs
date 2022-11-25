@@ -38,9 +38,7 @@ public class BuildingManager : MonoBehaviour
         {
             building.sprite = buildingItemData.Icon;
             GameObject walls = GameObject.Find("Walls");
-            GameObject buildings = GameObject.Find("PlayerBuildings");
             Tilemap WallTileMap = walls.GetComponent<Tilemap>();
-            Tilemap BuildingTileMap = buildings.GetComponent<Tilemap>();
             Tile tile = ScriptableObject.CreateInstance<Tile>();
             Vector3Int nearestTile = WallTileMap.WorldToCell(Camera.main.ScreenToWorldPoint(Input.mousePosition));
             Debug.Log("mouse z: " + nearestTile.z);
@@ -56,8 +54,7 @@ public class BuildingManager : MonoBehaviour
             tile.sprite = building.sprite;
             tile.colliderType = Tile.ColliderType.None;
 
-            BuildingTileMap.SetTile(nearestTile, tile);
-            WallTileMap.SetTile(nearestTile, null);
+            WallTileMap.SetTile(nearestTile, tile);
             return true;
         }
         else

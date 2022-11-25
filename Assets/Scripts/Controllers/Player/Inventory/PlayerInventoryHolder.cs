@@ -12,12 +12,23 @@ public class PlayerInventoryHolder : InventoryHolder
 
     public static UnityAction<InventorySystem> OnPlayerBackpackDisplayRequested;
 
+    private static PlayerInventoryHolder inventoryHolder;
+
 
     protected override void Awake()
     {
         base.Awake();
-
         secondaryInventorySystem = new InventorySystem(secondaryInventorySize);
+        DontDestroyOnLoad(gameObject);
+
+        if(inventoryHolder == null)
+        {
+            inventoryHolder = this;
+        }
+        else
+        {
+            DestroyObject(gameObject);
+        }
     }
     // Update is called once per frame
     void Update()

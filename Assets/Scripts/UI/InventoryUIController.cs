@@ -8,11 +8,23 @@ public class InventoryUIController : MonoBehaviour
     public StaticInventoryDisplay playerBackpackPanel;
     private bool isBackpackOpen;
 
+    private static InventoryUIController inventoryUIController;
+
     private void Awake()
     {
         chestPanel.gameObject.SetActive(false);
         playerBackpackPanel.gameObject.SetActive(false);
         isBackpackOpen = false;
+        DontDestroyOnLoad(gameObject);
+
+        if(inventoryUIController == null)
+        {
+            inventoryUIController = this;
+        }
+        else
+        {
+            DestroyObject(gameObject);
+        }
     }
     private void OnEnable()
     {
