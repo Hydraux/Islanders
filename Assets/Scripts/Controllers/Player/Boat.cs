@@ -6,14 +6,13 @@ using UnityEngine.SceneManagement;
 public class Boat : Building
 {
     BoxCollider2D collider;
-    GameObject sailingScene;
-    GameObject islandScene;
+    Transform islandScene;
+    GameObject PlayerParent;
 
     public override void Start()
     {
         collider = GetComponent<BoxCollider2D>();
-        islandScene = GameObject.FindGameObjectWithTag("Island Scene");        
-        sailingScene = GameObject.FindGameObjectWithTag("Sail Scene");        
+        PlayerParent = GameObject.Find("InventoryHolder");
         base.Start();
     }
 
@@ -33,12 +32,21 @@ public class Boat : Building
 
    void SetSail()
    {
-        foreach (Transform child in islandScene.transform)
+
+        islandScene = transform.parent;        
+    GameObject sailingScene = GameObject.FindGameObjectWithTag("Sail Scene");        
+
+
+        foreach (Transform child in PlayerParent.transform)
+        {
+            child.gameObject.SetActive(false);   
+        }
+        foreach (Transform child in islandScene)
         {
             child.gameObject.SetActive(false);
         }
 
-        if(sailingScene)
+        if(sailingScene != null)
         { 
             foreach (Transform child in sailingScene.transform)
             {

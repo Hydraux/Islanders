@@ -12,7 +12,10 @@ public class MouseItemData : MonoBehaviour
     public BuildingManager buildingManager;
     public Image ItemSprite;
     public TextMeshProUGUI ItemCount;
-    public InventorySlot AssignedInventorySlot;
+    public InventorySlot AssignedInventorySlot;    
+    [SerializeField] private GameObject validBoatTiles;
+    [SerializeField] private GameObject validBridgeTiles;
+
 
     private void Awake()
     {
@@ -32,6 +35,15 @@ public class MouseItemData : MonoBehaviour
     {
         if(AssignedInventorySlot.ItemData != null)
         {
+            if(AssignedInventorySlot.ItemData.DisplayName == "Bridge")
+            {
+                validBridgeTiles.SetActive(true);
+
+            }
+            if(AssignedInventorySlot.ItemData.DisplayName == "Boat")
+            {
+                validBoatTiles.SetActive(true);
+            }
             transform.position = Input.mousePosition;
 
             if(Mouse.current.leftButton.wasPressedThisFrame && !IsPointerOverUIObject())
@@ -40,6 +52,11 @@ public class MouseItemData : MonoBehaviour
                 ClearSlot();
             }
 
+        }
+        else if(validBoatTiles.activeInHierarchy || validBridgeTiles.activeInHierarchy)
+        {
+            validBoatTiles.SetActive(false);
+            validBridgeTiles.SetActive(false);
         }
     }
 

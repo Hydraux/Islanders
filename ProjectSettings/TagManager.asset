@@ -12,6 +12,8 @@ TagManager:
   - Inventory Holder
   - Island Scene
   - Sail Scene
+  - Island2 Scene
+  - Ship
   layers:
   - Default
   - TransparentFX

@@ -4,11 +4,13 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Tilemaps;
 
-[CreateAssetMenu(menuName = "Buildings/building")]
+
 public class Building : MonoBehaviour
 {
     public Sprite sprite;
+    public GameObject prefab;
     public int buildingID;
+    public bool isObject;
 
     public virtual void Start()
     {

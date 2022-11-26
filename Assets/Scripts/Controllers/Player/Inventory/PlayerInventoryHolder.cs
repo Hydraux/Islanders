@@ -13,6 +13,7 @@ public class PlayerInventoryHolder : InventoryHolder
     public static UnityAction<InventorySystem> OnPlayerBackpackDisplayRequested;
 
     private static PlayerInventoryHolder inventoryHolder;
+    public Vector3 SpawnPoint;
 
 
     protected override void Awake()
@@ -64,5 +65,10 @@ public class PlayerInventoryHolder : InventoryHolder
                     secondaryInventorySystem.RemoveResources(item, numToAdd);    
                 } 
             }
+    }
+
+    void Spawn()
+    {
+        transform.position = SpawnPoint;
     }
 }

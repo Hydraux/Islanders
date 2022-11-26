@@ -15,6 +15,7 @@ public class PlayerController : MonoBehaviour
     Interactor interactor;
     GameObject islandScene;
     GameObject sailingScene;
+    GameObject playerParent;
 
     // Start is called before the first frame update
     void Start()
@@ -22,8 +23,7 @@ public class PlayerController : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();    
         boxCollider2D = GetComponent<BoxCollider2D>();
         interactor = GetComponent<Interactor>();
-        islandScene = GameObject.FindGameObjectWithTag("Island Scene");
-        sailingScene = GameObject.FindGameObjectWithTag("Sail Scene");
+        playerParent = GameObject.Find("InventoryHolder");
 
 
     }
@@ -62,19 +62,35 @@ public class PlayerController : MonoBehaviour
         Debug.Log("Collided with name: " + other.gameObject.name);
         if(other.gameObject.tag == "Island")
         {
+            sailingScene = GameObject.FindGameObjectWithTag("Sail Scene");
+            foreach (Transform child in playerParent.transform)
+            {
+             child.gameObject.SetActive(true);   
+            }
+            foreach (Transform child in sailingScene.transform)
+            {
+                child.gameObject.SetActive(false);
+            }   
             if(other.gameObject.name == "Island (1)")
             {
+
+                islandScene = GameObject.FindGameObjectWithTag("Island Scene");
+
+
+            }
+            else if (other.gameObject.name == "Island")
+            {
+                islandScene = GameObject.FindGameObjectWithTag("Island2 Scene");
+
+            }
                 foreach (Transform child in islandScene.transform)
                 {
                     child.gameObject.SetActive(true);
                 } 
-                foreach (Transform child in sailingScene.transform)
-                {
-                    child.gameObject.SetActive(false);
-                }   
-
-
-            }
+                GameObject inventoryHolder = GameObject.Find("InventoryHolder");
+                
+                inventoryHolder.SetActive(true);
+            transform.position = other.transform.position + new Vector3(0,-0.5f,0);  
         }
     }
 
