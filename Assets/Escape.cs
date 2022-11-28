@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 [System.Serializable]
 public class ShipItem
@@ -34,6 +35,7 @@ public class Escape : MonoBehaviour
             if(hasShipItems())
             {
                 Debug.Log("You win");
+                SceneManager.LoadScene("WinScene");
             }
 
         }

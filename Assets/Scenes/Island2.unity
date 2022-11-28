@@ -382,13 +382,14 @@ GameObject:
   - component: {fileID: 171162240}
   - component: {fileID: 171162239}
   - component: {fileID: 171162238}
+  - component: {fileID: 171162241}
   m_Layer: 0
   m_Name: Ship
   m_TagString: Ship
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!61 &171162238
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -474,14 +475,32 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 171162237}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.10118902, y: -0.58142465, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 1.950189, y: -1.5974247, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_Father: {fileID: 1446682871}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &171162241
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 171162237}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3b43a33981722774e943327f4959fa54, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shipItems:
+  - item: {fileID: 11400000, guid: 01cda53e3c4c60145b0ffe07a6786156, type: 2}
+    numRequired: 1
+  - item: {fileID: 11400000, guid: 566e048915376334892898faf4426819, type: 2}
+    numRequired: 3
+  playerInventory: {fileID: 0}
 --- !u!1 &252347865
 GameObject:
   m_ObjectHideFlags: 0
@@ -2121,7 +2140,7 @@ Transform:
   - {fileID: 1088127516}
   - {fileID: 1724633376}
   m_Father: {fileID: 1446682871}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!156049354 &944709571
 Grid:
@@ -37041,7 +37060,7 @@ RectTransform:
   - {fileID: 1626316065}
   - {fileID: 1906387369}
   m_Father: {fileID: 1446682871}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -37458,6 +37477,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 171162240}
   - {fileID: 944709570}
   - {fileID: 1280891113}
   - {fileID: 1378684187}
@@ -70441,7 +70461,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1301390894011430146, guid: 92ac42731953f914fbd68898ceaf6abc, type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1301390894011430146, guid: 92ac42731953f914fbd68898ceaf6abc, type: 3}
       propertyPath: m_LocalPosition.x
